@@ -1,0 +1,14 @@
+{
+  "name": "gitlab-image-viewer-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Asset rendering tools for the GitLab Image Viewer extension.",
+  "scripts": {
+    "assets": "node tools/render-assets.mjs",
+    "validate": "node tools/validate.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.1"
+  }
+}
