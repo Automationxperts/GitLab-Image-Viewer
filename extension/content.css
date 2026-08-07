@@ -1,0 +1,307 @@
+/* GitLab Image Viewer — all classes are prefixed with .giv- to avoid
+   colliding with GitLab's own styles. GitLab design tokens are used when
+   present, with theme-aware fallbacks for older GitLab versions. */
+
+.giv-panel {
+    --giv-bg: #ffffff;
+    --giv-bg-subtle: #fbfafd;
+    --giv-border: #dcdcde;
+    --giv-text: #333238;
+    --giv-muted: #737278;
+    --giv-hover: #f0edf5;
+    --giv-checker-bg: #f6f3fa;
+    box-sizing: border-box;
+    margin: 0 0 16px;
+    border: 1px solid var(--gl-border-color-default, var(--giv-border));
+    border-radius: 8px;
+    background: var(--gl-background-color-default, var(--giv-bg));
+    color: var(--gl-text-color-default, var(--giv-text));
+    font-family: var(--gl-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+    overflow: hidden;
+}
+
+.giv-panel *,
+.giv-lightbox * {
+    box-sizing: border-box;
+}
+
+.gl-dark .giv-panel {
+    --giv-bg: #1f1e24;
+    --giv-bg-subtle: #26242c;
+    --giv-border: #3f3d47;
+    --giv-text: #ececef;
+    --giv-muted: #a4a2ad;
+    --giv-hover: #33313a;
+    --giv-checker-bg: #2a2830;
+}
+
+.giv-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--gl-border-color-default, var(--giv-border));
+    background: var(--gl-background-color-subtle, var(--giv-bg-subtle));
+    color: var(--gl-text-color-subtle, var(--giv-muted));
+    font-size: 12px;
+}
+
+.giv-bar label {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.giv-bar input,
+.giv-bar button {
+    font-family: inherit;
+    font-size: 12px;
+    color: var(--gl-text-color-default, var(--giv-text));
+}
+
+.giv-bar input[type="number"] {
+    width: 52px;
+}
+
+.giv-bar input[type="range"] {
+    width: 120px;
+    accent-color: var(--gl-color-orange-500, #fc6d26);
+}
+
+.giv-bar input[type="search"] {
+    width: 150px;
+    padding: 3px 8px;
+    border: 1px solid var(--gl-border-color-default, var(--giv-border));
+    border-radius: 6px;
+    background: var(--gl-background-color-default, var(--giv-bg));
+}
+
+.giv-bar input[type="checkbox"] {
+    accent-color: var(--gl-color-orange-500, #fc6d26);
+}
+
+.giv-bar input:focus-visible,
+.giv-bar button:focus-visible {
+    outline: 2px solid var(--gl-color-orange-500, #fc6d26);
+    outline-offset: 1px;
+}
+
+.giv-bar output {
+    min-width: 26px;
+    font-variant-numeric: tabular-nums;
+}
+
+.giv-toggle {
+    padding: 3px 10px;
+    border: 1px solid var(--gl-action-neutral-border-color-default, var(--giv-border));
+    border-radius: 6px;
+    background: var(--gl-action-neutral-background-color-default, var(--giv-bg));
+    cursor: pointer;
+}
+
+.giv-toggle:hover {
+    background: var(--gl-action-neutral-background-color-hover, var(--giv-hover));
+}
+
+.giv-count {
+    margin-left: auto;
+    color: var(--gl-text-color-subtle, var(--giv-muted));
+    font-variant-numeric: tabular-nums;
+}
+
+.giv-grid {
+    display: grid;
+    gap: 10px;
+    padding: 12px;
+}
+
+.giv-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 0;
+    border-radius: 6px;
+    color: var(--gl-text-color-default, var(--giv-text)) !important;
+    text-decoration: none !important;
+}
+
+.giv-item img {
+    width: 100%;
+    height: var(--giv-size, 160px);
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: var(--giv-checker-bg);
+    background-image: repeating-conic-gradient(#8881 0 25%, transparent 0 50%);
+    background-size: 16px 16px;
+}
+
+.giv-item span {
+    max-width: 100%;
+    overflow: hidden;
+    color: var(--gl-text-color-subtle, var(--giv-muted));
+    font-size: 11px;
+    line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.giv-item:hover img,
+.giv-item:focus-visible img {
+    outline: 2px solid var(--gl-color-orange-500, #fc6d26);
+    outline-offset: 1px;
+}
+
+.giv-item:focus-visible {
+    outline: none;
+}
+
+.giv-item.giv-broken img {
+    opacity: 0.35;
+}
+
+.giv-nonames .giv-item span {
+    display: none;
+}
+
+.giv-hidden {
+    display: none !important;
+}
+
+.giv-hidelist {
+    display: none !important;
+}
+
+.giv-empty {
+    margin: 0;
+    padding: 26px 16px;
+    color: var(--gl-text-color-subtle, var(--giv-muted));
+    font-size: 13px;
+    text-align: center;
+}
+
+/* Lightbox */
+
+.giv-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2147483000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(12, 8, 18, 0.94);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.giv-lightbox.giv-open {
+    display: flex;
+}
+
+.giv-lightbox figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: calc(100vw - 140px);
+    margin: 0;
+}
+
+.giv-lightbox img {
+    max-width: 100%;
+    max-height: calc(100vh - 100px);
+    min-height: min(60vh, 480px);
+    object-fit: contain;
+    border-radius: 6px;
+    background-color: #120d1a;
+    background-image: repeating-conic-gradient(#ffffff10 0 25%, transparent 0 50%);
+    background-size: 20px 20px;
+}
+
+.giv-lightbox img.giv-pixel {
+    image-rendering: pixelated;
+}
+
+.giv-lightbox figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 14px;
+    color: #d9d4e7;
+    font-size: 13px;
+}
+
+.giv-lightbox figcaption a {
+    color: #ffb38a;
+    text-decoration: none;
+}
+
+.giv-lightbox figcaption a:hover {
+    text-decoration: underline;
+}
+
+.giv-lightbox button {
+    flex: none;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.giv-lightbox button:hover,
+.giv-lightbox button:focus-visible {
+    background: var(--gl-color-orange-500, #fc6d26);
+    outline: none;
+}
+
+.giv-lb-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+body.giv-lock {
+    overflow: hidden !important;
+}
+
+@media (max-width: 640px) {
+    .giv-bar {
+        gap: 8px 12px;
+    }
+
+    .giv-bar input[type="range"] {
+        width: 100px;
+    }
+
+    .giv-bar input[type="search"] {
+        width: 130px;
+    }
+
+    .giv-count {
+        margin-left: 0;
+    }
+
+    .giv-lightbox {
+        gap: 4px;
+    }
+
+    .giv-lightbox figure {
+        max-width: calc(100vw - 96px);
+    }
+
+    .giv-lightbox button {
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
+    }
+}
