@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitLab Image Viewer — Settings</title>
+<link rel="icon" type="image/png" href="icons/icon32.png">
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<main class="wrap">
+  <header class="hero">
+    <img src="icons/icon128.png" alt="" width="64" height="64">
+    <div>
+      <p class="eyebrow">GitLab Image Viewer</p>
+      <h1>Settings</h1>
+      <p class="lede">gitlab.com works out of the box. Add a self-hosted GitLab instance to get the same thumbnail gallery there.</p>
+    </div>
+  </header>
+
+  <section class="card">
+    <div class="card-head">
+      <div>
+        <h2>gitlab.com</h2>
+        <p class="sub">Public and private projects, using your normal GitLab session.</p>
+      </div>
+      <span class="badge ok">Built in</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <div>
+        <h2>Self-hosted GitLab</h2>
+        <p class="sub">Add the address you open in your browser. Only that origin is requested.</p>
+      </div>
+    </div>
+
+    <form id="add-form" class="add-form">
+      <label class="sr-only" for="origin">Self-hosted GitLab URL</label>
+      <input id="origin" name="origin" type="text" inputmode="url" autocomplete="url" spellcheck="false" placeholder="https://gitlab.example.com">
+      <button class="btn btn-primary" type="submit">Add instance</button>
+    </form>
+
+    <p id="message" class="message" role="status" aria-live="polite"></p>
+    <ul id="instances" class="instances"></ul>
+
+    <p class="hint">GitLab installed under a subpath works too — enter just the host, for example <code>example.com</code>. Reload any open GitLab tabs after adding an instance.</p>
+  </section>
+
+  <footer>
+    <span>© <span id="year">2026</span> GitLab Image Viewer. Not affiliated with GitLab, Inc.</span>
+    <span class="footer-note">No tracking · Settings stay in your browser</span>
+    <a href="https://AutomationXpert.github.io/Gitlab-Image-Viewer/privacy.html" target="_blank" rel="noopener">Privacy</a>
+  </footer>
+</main>
+<script src="shared.js" defer></script>
+<script src="options.js" defer></script>
+</body>
+</html>
