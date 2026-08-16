@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2a1b33"/>
+      <stop offset="0.5" stop-color="#150d1f"/>
+      <stop offset="1" stop-color="#08050d"/>
+    </linearGradient>
+    <linearGradient id="coral" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff9a5c"/>
+      <stop offset="0.55" stop-color="#fc6d26"/>
+      <stop offset="1" stop-color="#d63b1f"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2a4d"/>
+      <stop offset="1" stop-color="#241a32"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#bg)"/>
+  <path d="M4 60 L60 4 L32 4 Q4 4 4 32 Z" fill="url(#sheen)"/>
+  <rect x="4.75" y="4.75" width="118.5" height="118.5" rx="29.25" fill="none" stroke="#a78bfa" stroke-opacity="0.28" stroke-width="1.5"/>
+
+  <!-- Viewfinder corners -->
+  <g stroke="#c4b5fd" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M22 38V28a6 6 0 0 1 6-6h10"/>
+    <path d="M90 22h10a6 6 0 0 1 6 6v10"/>
+    <path d="M106 90v10a6 6 0 0 1-6 6H90"/>
+    <path d="M38 106H28a6 6 0 0 1-6-6V90"/>
+  </g>
+
+  <!-- 2 x 2 contact sheet -->
+  <rect x="34" y="34" width="26" height="26" rx="7" fill="url(#tile)"/>
+  <rect x="68" y="34" width="26" height="26" rx="7" fill="url(#tile)"/>
+  <rect x="34" y="68" width="26" height="26" rx="7" fill="url(#tile)"/>
+  <rect x="68" y="68" width="26" height="26" rx="7" fill="url(#coral)"/>
+
+  <circle cx="47" cy="47" r="3" fill="#c4b5fd" fill-opacity="0.8"/>
+  <path d="M74 54 L88 40" stroke="#a78bfa" stroke-opacity="0.65" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="74" cy="54" r="2.5" fill="#a78bfa" fill-opacity="0.8"/>
+  <circle cx="88" cy="40" r="2.5" fill="#a78bfa" fill-opacity="0.8"/>
+  <path d="M40 78h14M40 83h10M40 88h12" stroke="#c4b5fd" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Image glyph -->
+  <path d="M72.5 87.5 L78 81 L82 86 L84.5 83 L90 89.5 Z" fill="#ffffff" fill-opacity="0.95"/>
+  <circle cx="86" cy="76" r="2.2" fill="#ffffff" fill-opacity="0.95"/>
+</svg>
