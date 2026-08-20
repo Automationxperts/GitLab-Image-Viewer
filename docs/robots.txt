@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://AutomationXpert.github.io/Gitlab-Image-Viewer/sitemap.xml

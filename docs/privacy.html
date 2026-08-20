@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – GitLab Image Viewer</title>
+<meta name="description" content="GitLab Image Viewer collects no personal data. It stores your grid settings and self-hosted instance list locally in your browser, and loads thumbnails only from the GitLab instance you are viewing.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://AutomationXpert.github.io/Gitlab-Image-Viewer/privacy.html">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+<meta name="theme-color" content="#0b0711">
+<style>
+:root {
+  --bg: #0b0711;
+  --panel: rgba(255, 255, 255, 0.035);
+  --line: rgba(255, 255, 255, 0.09);
+  --text: #f6f2fb;
+  --muted: #b3aac2;
+  --dim: #7d748d;
+  --coral: #fc6d26;
+  --coral-2: #ff9a5c;
+  --violet: #a78bfa;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.7 Manrope, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 45% at 88% -6%, rgba(252, 109, 38, 0.18), transparent 70%),
+    radial-gradient(45% 40% at 4% 12%, rgba(110, 73, 203, 0.16), transparent 70%),
+    linear-gradient(180deg, #100a17 0%, var(--bg) 55%, #07040b 100%);
+}
+a { color: var(--violet); }
+a:hover { color: #d9c9ff; }
+main { width: min(760px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 72px; }
+.top { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; color: var(--muted); font-size: 14px; text-decoration: none; }
+.top img { width: 28px; height: 28px; }
+.top:hover { color: var(--text); }
+h1 { margin: 0 0 8px; font-size: clamp(32px, 6vw, 46px); line-height: 1.1; letter-spacing: -.035em; }
+.updated { margin: 0 0 34px; color: var(--dim); font-size: 13px; }
+h2 { margin: 40px 0 12px; font-size: 20px; letter-spacing: -.02em; }
+p, li { color: var(--muted); }
+p { margin: 0 0 14px; }
+ul { margin: 0 0 16px; padding-left: 22px; }
+li { margin-bottom: 8px; }
+li::marker { color: var(--coral); }
+b { color: var(--text); font-weight: 600; }
+code {
+  padding: 1px 6px;
+  border-radius: 5px;
+  background: rgba(167, 139, 250, 0.12);
+  color: #d9c9ff;
+  font: 0.86em "JetBrains Mono", ui-monospace, Consolas, monospace;
+}
+.card {
+  margin: 28px 0 0;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+.card p:last-child { margin-bottom: 0; }
+footer { margin-top: 52px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--dim); font-size: 13px; }
+footer a { color: var(--muted); text-decoration: none; }
+footer a:hover { color: var(--text); }
+:focus-visible { outline: 2px solid var(--coral); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main>
+  <a class="top" href="./"><img src="assets/icon.svg" alt="" width="28" height="28">GitLab Image Viewer</a>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: 22 November 2026</p>
+
+  <p>GitLab Image Viewer is a browser extension that shows the images in a GitLab repository folder as a thumbnail grid. This page explains exactly what it does with your data.</p>
+
+  <h2>The short version</h2>
+  <div class="card">
+    <p><b>No data is collected.</b> The extension has no analytics, no telemetry and no servers of its own. Nothing about you, your repositories or your browsing is transmitted anywhere.</p>
+  </div>
+
+  <h2>What is stored, and where</h2>
+  <ul>
+    <li><b>Grid settings.</b> Thumbnail size, images per row, show names, hide file list, and whether the grid is open are saved with <code>chrome.storage.local</code> in your own browser profile.</li>
+    <li><b>Self-hosted instances.</b> If you add a GitLab address on the settings page, that origin is stored locally so the extension can keep working there after a restart.</li>
+  </ul>
+  <p>Both are local to your browser. They are not synced to a server by this extension, and they are removed when you uninstall it.</p>
+
+  <h2>Network requests</h2>
+  <p>Thumbnails are loaded from the same GitLab instance whose folder you are viewing, by requesting the file's raw URL. This uses your existing browser session, so images in private projects load the same way they do when you open them in GitLab. No token, OAuth flow or password is involved.</p>
+  <p>The extension contacts no other domain. It does not phone home, and it does not load remote code.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><code>storage</code> — remember your grid settings and your self-hosted instance list.</li>
+    <li><code>scripting</code> — register the content script for a self-hosted GitLab origin you have approved.</li>
+    <li><b>Access to <code>https://gitlab.com/*</code></b> — add the thumbnail grid to GitLab folder pages.</li>
+    <li><b>Optional access to a self-hosted origin</b> — requested only when you type an address into the settings page and confirm it. Access is limited to that one origin, and you can revoke it at any time from your browser's extension settings.</li>
+  </ul>
+
+  <h2>What the extension does not do</h2>
+  <ul>
+    <li>It does not read, collect or transmit your GitLab credentials, cookies or tokens.</li>
+    <li>It does not track which pages you visit.</li>
+    <li>It does not modify files, repositories or project settings.</li>
+    <li>It does not sell or share data with third parties.</li>
+  </ul>
+
+  <h2>Changes to this policy</h2>
+  <p>If a future version changes how data is handled, this page will be updated before that version is published, and the date at the top will change.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or concerns? <a href="https://github.com/AutomationXpert/Gitlab-Image-Viewer/issues">Open an issue on GitHub</a>.</p>
+
+  <footer>
+    <p>© 2026 GitLab Image Viewer · <a href="./">Home</a> · <a href="https://github.com/AutomationXpert/Gitlab-Image-Viewer">Source</a></p>
+    <p>Not affiliated with or endorsed by GitLab, Inc. GitLab is a trademark of GitLab Inc.</p>
+  </footer>
+</main>
+</body>
+</html>
