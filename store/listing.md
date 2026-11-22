@@ -42,7 +42,7 @@ gitlab.com works immediately. For your own instance, open the extension settings
 PRIVACY
 No analytics, no tracking, no servers. The extension stores only your grid settings and the self-hosted instances you add, in your browser. Images are loaded from the GitLab instance you are viewing, exactly as GitLab loads them.
 
-Open source (MIT): https://github.com/AutomationXpert/Gitlab-Image-Viewer
+Open source (MIT): https://github.com/AutomationXperts/Gitlab-Image-Viewer
 Website: https://AutomationXpert.github.io/Gitlab-Image-Viewer/
 
 Not affiliated with GitLab, Inc. GitLab is a trademark of GitLab Inc.
@@ -57,7 +57,7 @@ Not affiliated with GitLab, Inc. GitLab is a trademark of GitLab Inc.
 ## Additional fields
 
 - **Official URL / Homepage:** https://AutomationXpert.github.io/Gitlab-Image-Viewer/
-- **Support URL:** https://github.com/AutomationXpert/Gitlab-Image-Viewer/issues
+- **Support URL:** https://github.com/AutomationXperts/Gitlab-Image-Viewer/issues
 
 ## Privacy practices tab
 

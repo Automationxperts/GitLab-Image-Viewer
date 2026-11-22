@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GitLab Image Viewer - Thumbnail Gallery for Repos",
-  "short_name": "GitLab Image Viewer",
+  "short_name": "GitlabImage",
   "version": "1.0.0",
   "description": "See every image in a GitLab folder as a thumbnail grid. Adjustable size, images per row, and a full-size lightbox.",
   "homepage_url": "https://AutomationXpert.github.io/Gitlab-Image-Viewer/",

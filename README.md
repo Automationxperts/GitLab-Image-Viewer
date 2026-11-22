@@ -10,8 +10,8 @@
 </p>
 
 <p align="center">
-  <a href="https://AutomationXpert.github.io/Gitlab-Image-Viewer/"><b>Website</b></a> ·
-  <a href="https://github.com/AutomationXpert/Gitlab-Image-Viewer/releases/latest"><b>Download</b></a> ·
+  <a href="https://automationxperts.github.io/GitLab-Image-Viewer/"><b>Website</b></a> ·
+  <a href="https://github.com/AutomationXperts/Gitlab-Image-Viewer/releases/latest"><b>Download</b></a> ·
   <a href="#install">Install</a> ·
   <a href="#self-hosted-gitlab">Self-hosted</a> ·
   <a href="#faq">FAQ</a>
@@ -54,7 +54,7 @@ On GitLab, a folder of images is just a list of file names. If you work with gam
 
 The Chrome Web Store listing is on its way. Until it is live, install it from GitHub:
 
-1. Download the latest `gitlab-image-viewer-*.zip` from [Releases](https://github.com/AutomationXpert/Gitlab-Image-Viewer/releases/latest) and unzip it, or clone this repository.
+1. Download the latest `gitlab-image-viewer-*.zip` from [Releases](https://github.com/AutomationXperts/Gitlab-Image-Viewer/releases/latest) and unzip it, or clone this repository.
 2. Open `chrome://extensions` (Edge: `edge://extensions`, Brave: `brave://extensions`).
 3. Turn on **Developer mode**.
 4. Click **Load unpacked** and select the `extension` folder.
@@ -118,7 +118,7 @@ npm run assets  # re-renders icons, promo images and screenshots
 
 ## Contributing
 
-Issues and pull requests are welcome. If GitLab changes its page layout and the grid stops appearing, please [open an issue](https://github.com/AutomationXpert/Gitlab-Image-Viewer/issues) with the URL of the folder (or a description of the page structure if the project is private).
+Issues and pull requests are welcome. If GitLab changes its page layout and the grid stops appearing, please [open an issue](https://github.com/AutomationXperts/Gitlab-Image-Viewer/issues) with the URL of the folder (or a description of the page structure if the project is private).
 
 ## License
 
