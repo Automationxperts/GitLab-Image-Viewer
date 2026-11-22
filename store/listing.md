@@ -73,3 +73,28 @@ Not affiliated with GitLab, Inc. GitLab is a trademark of GitLab Inc.
 ## Distribution
 
 Public, all regions, free.
+
+## Edge Add-ons submission
+
+### Single purpose
+
+GitLab Image Viewer has one purpose: show the images inside a GitLab repository folder as a thumbnail gallery, and open a larger preview when a thumbnail is clicked. It adds the gallery above GitLab's existing file list on gitlab.com and on self-hosted GitLab instances the user explicitly adds. It does not modify repositories or files, and it does not run on any other website.
+
+### Permission justification — storage
+
+Used only to remember the user's gallery preferences locally: thumbnail size, images per row, whether file names are shown, whether GitLab's file list is hidden, whether the gallery is expanded, and the addresses of self-hosted GitLab instances the user adds. The data stays in the browser's local extension storage on the user's device. It is not transmitted, synced, or shared.
+
+### Permission justification — scripting
+
+Used to register the extension's own content script on a self-hosted GitLab origin after the user adds that instance on the settings page and approves the browser permission prompt for that origin. This lets the same thumbnail gallery work on self-hosted GitLab without requesting access to all sites at install. No code is injected into any other site, and no remote code is executed.
+
+### Host access justification (if the form asks)
+
+`https://gitlab.com/*` is required to read the file list on GitLab folder pages and add the thumbnail gallery there. The optional host permissions are requested one origin at a time, only when the user enters a self-hosted GitLab address and confirms the browser prompt, and are used solely to run the same gallery on that instance. The extension never requests or uses access to unrelated sites.
+
+### Remote code
+
+Answer: **No**
+
+No. All HTML, CSS, JavaScript, and icons are included in the submitted package. The extension does not load scripts, stylesheets, modules, or WebAssembly from the network, does not use `eval()` or `new Function()`, and does not execute code received from GitLab. Image files are loaded only as image data for display.
+
